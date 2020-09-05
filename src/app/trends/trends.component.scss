@@ -1,0 +1,41 @@
+mat-table {
+    width: 100%;
+}
+
+// mat-table {
+//     background-color: transparent;
+// }
+mat-row:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+mat-row:nth-child(odd) {
+    background-color: rgb(235, 235, 235);
+}
+
+// mat-row:nth-child(odd) {
+//     background-color: #ffffff;
+// }
+mat-header-cell:first-child,
+mat-cell:first-child {
+    flex: 70%;
+}
+
+//Second column and header
+mat-header-cell:nth-child(2),
+mat-cell:nth-child(2) {
+    flex: 10%;
+}
+
+//Last column and header
+mat-header-cell:last-child,
+mat-cell:last-child {
+    flex: 20%
+}
+
+mat-header-cell {
+    // background-color: rgb(175  , 175, 175); 
+    background-color: #0b1560;
+    font-size: 1em;
+    color: white;
+}

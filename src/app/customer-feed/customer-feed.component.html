@@ -1,0 +1,31 @@
+<mat-toolbar fxLayout="row" fxLayoutAlign="space-between center" class="toolbar">
+    <button mat-icon-button (click)="close()">
+    <mat-icon matTooltip="Back">arrow_back</mat-icon>
+  </button>
+  <h1>
+    {{data.dataArray.customerFeedTitle}}
+  </h1>
+  <button mat-icon-button>
+    <mat-icon>more_vert</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-card *ngFor="let array of data.dataArray.customerNames; let i = index" class="example-card">
+  <div fxLayout fxLayoutAlign="space-between start">
+    <div fxLayout fxLayoutGap="1em">
+      <div mat-card-avatar class="example-header-image">
+      </div>
+      <div>
+        <mat-card-title class="title">{{array}}</mat-card-title>
+        <mat-card-subtitle class="title">{{data.dataArray.travel}}</mat-card-subtitle>
+      </div>
+    </div>
+    <div fxLayout fxLayoutGap="1em">
+    <img src="../../../assets/Images/facebook.svg" height="24px" width="24px">
+    <img *ngIf = "data.dataArray.display[i]" src="../../../assets/Images/whatsapp.png" height="24px" width="24px">
+    <img *ngIf = "data.dataArray.display[i]" src="../../../assets/Images/twitter.png" height="24px" width="24px">
+    <img src="../../../assets/Images/sms.svg" height="24px" width="24px">
+    <mat-icon class="email">{{data.dataArray.icon}}</mat-icon>
+  </div>
+  </div>
+    
+</mat-card>

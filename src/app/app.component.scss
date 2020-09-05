@@ -1,0 +1,26 @@
+p {
+    font-family: Lato;
+}
+
+.main_content {
+    width: 100%;
+    height: calc(100vh - 68px);
+    // background: #efefef;
+}
+
+.flightcard {
+    width: 100%;
+}
+
+.side_menu {
+    background-color: #0b1560;
+}
+
+.navigation{
+    margin-top: 1em;
+}
+
+.active{
+    background-color: #0b1560;
+    color: white;   
+}

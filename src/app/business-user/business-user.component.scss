@@ -1,0 +1,95 @@
+.business {
+    margin: 1em;
+}
+
+.matTitle {
+    font-size: 0.95em;
+    font-weight: bold;
+}
+
+.matGrey {
+    color: #949494;
+}
+
+.matBlue {
+    color: #0b1560;
+}
+
+mat-card-title{
+    //  
+}
+app-activity-feed {
+    padding: 0 2% 0 2%;
+    // background-image: linear-gradient(to right top, rgba(166, 198, 238, 0), rgba(166, 198, 238, 0.75));
+}
+
+.divider {
+    border-right-width: 10px;
+    height: 50px;
+}
+
+.ok_contacts:hover {
+    color: rgb(0, 0, 0, 0.87);
+    cursor: pointer;
+}
+
+.search {
+    padding-left: 2%;
+}
+
+.searchContainer {
+    padding-left: 4%;
+    display: inline-flex;
+    flex: 1 1 300px;
+    position: relative;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    border-radius: 50px !important;
+    font-size: inherit;
+    font-weight: 400;
+    line-height: 1.125;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: #ffffff;
+}
+
+.searchBox:focus {
+    outline: 0;
+}
+
+.searchIcon {
+    background-color: #ffffff;
+    padding: 0.5rem;
+}
+
+.searchBox {
+    border: 0;
+    padding: 0.5rem 0.5rem 0.5rem 0;
+    flex: 1;
+}
+
+.searchButton {
+    background: #538AC5;
+    border: 0;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0;
+}
+
+.grey {
+    opacity: 0.3;
+}
+
+.sort {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.red {
+    color: RED;
+}
+
+#desc{
+    width: 100%;
+}
+mat-card-title, mat-card-subtitle{
+    margin: 0 25px !important;
+}

@@ -1,0 +1,24 @@
+<div>
+    <app-header [sidenav]="leftSidenav"></app-header>
+
+    <mat-sidenav-container class="sidenav-container">
+        <mat-sidenav #leftSidenav mode="side" opened class="side_menu">
+            <app-left-menu></app-left-menu>
+        </mat-sidenav>
+        <mat-sidenav-content [@onMainContentChange]="onSideNavChange ? 'open': 'close'">
+            <div fxLayout="column" class="main_content">
+                <div fxLayout="row" fxLayoutAlign="space-around start" fxLayoutGap="1em" class="navigation">
+                    <!-- <app-business-user style="width:100%"></app-business-user> -->
+                    <!-- <button mat-raised-button [routerLink]="['/businessUser']" routerLinkActive="active">BusinessUser</button>
+                    <button mat-raised-button [routerLink]="['/managerView']" routerLinkActive="active">Manager</button> -->
+                </div>
+                <router-outlet></router-outlet>
+
+                <!-- <app-manager-charts style="width:100%"></app-manager-charts> -->
+
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+</div>
+<!-- -->

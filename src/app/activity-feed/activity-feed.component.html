@@ -1,0 +1,23 @@
+<div fxLayout="column" fxLayoutGap="1em">
+    <mat-toolbar fxLayout="row" class="toolbar">
+        <div fxFlex="95%" fxLayoutAlign="center center">
+            <h1>ACTIVITY FEED</h1>
+        </div>
+        <button mat-icon-button fxFlex="5%" (click)="shuffleArray()">
+            <mat-icon class="refresh">refresh</mat-icon>
+        </button>
+    </mat-toolbar>
+    <mat-card *ngFor="let array of arr" [class.fade1]="array.hasFade1" [class.fade2]="array.hasFade2">
+        <div fxLayout fxLayoutAlign="space-between center" class="card">
+            <div fxFlex="45%">
+                {{array.desc}}
+            </div>
+            <div>
+                {{array.count}}
+            </div>
+            <div fxFlex="40%" fxLayout fxLayoutAlign="end center">
+                {{array.status}}
+            </div>
+        </div>
+    </mat-card>
+</div>

@@ -1,0 +1,62 @@
+<div fxLayout="row wrap" fxLayoutGap="0.35em">
+    <div fxLayout fxFlex="54%" fxLayoutGap="0.35em">
+        <div class="cardDiv" *ngFor="let i of myData" fxFlex="auto">
+            <mat-card class="example-card">
+                <div>
+                    <div *ngIf="i.type=='short haul flights'">
+                        <mat-icon>access_time</mat-icon>
+                    </div>
+                    <div *ngIf="i.type=='long haul flights'">
+                        <mat-icon>today</mat-icon>
+                    </div>
+                    <div *ngIf="i.type=='completed flights'">
+                        <mat-icon>check_circle</mat-icon>
+                    </div>
+                </div>
+                <mat-card-header class="cardTitle" fxLayoutAlign="center center">
+                    <mat-card-title>
+                        <h3 align="center">{{i.num}}/{{i.outOf}}</h3>
+                    </mat-card-title>
+                    <mat-card-subtitle>
+                        <p align="center">
+                            <strong> {{i.type | uppercase}}</strong>
+                        </p>
+                    </mat-card-subtitle>
+                </mat-card-header>
+            </mat-card>
+        </div>
+    </div>
+    <mat-card class="example-card1" fxFlex="45%">
+        <div class="cardTitle">
+            <div>
+                <div style="display: block;" fxLayoutAlign="center">
+                    <canvas baseChart width="460" height="130" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [chartType]="lineChartType">
+                    </canvas>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="message">
+
+                <div fxLayout fxLayoutAlign="center end" fxLayoutGap="0.7em">
+                 <strong>
+                    <span>NOT MUCH DISRUPTION, GOOD DAY TODAY <mat-icon class="emoji">emoji_emotions</mat-icon></span>
+                </strong>
+                <div fxLayout fxLayoutAlign="none center" fxLayoutGap="1.5em">
+                    <div>
+                        TimeFrame:
+                 </div>
+                 <mat-form-field>
+                    <!-- <mat-label>TimeFrame</mat-label> -->
+                    <mat-select [(value)]="selected" (selectionChange)="doSomething()">
+                        <mat-option value="option1">2019</mat-option>
+                        <mat-option value="option2">2018</mat-option>
+                        <mat-option value="option3">2017</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                </div>
+            </div>
+            </div>
+        </div>
+    </mat-card>
+</div>

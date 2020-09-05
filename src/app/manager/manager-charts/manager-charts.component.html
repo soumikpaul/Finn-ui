@@ -1,0 +1,28 @@
+<div fxLayout="column" class="container">
+    <mat-button-toggle-group fxLayout fxLayoutAlign="center center" #group="matButtonToggleGroup" [(value)]="Selected">
+        <mat-button-toggle *ngFor="let button of buttonArray" [value]="button" [class.blue]="button==group.value">{{button}}</mat-button-toggle>
+      </mat-button-toggle-group>
+    <div fxLayout  fxLayoutGap="1em">
+        <mat-card fxFlex="48.5%" class="barChart">
+            <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+    </canvas>
+        </mat-card>
+        <mat-card fxFlex="50%" class="example-card1">
+            <div class="cardTitle">
+                <div>
+                    <div style="display: block;" fxLayoutAlign="center">
+                        <canvas baseChart height="260"[datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [chartType]="lineChartType">
+                    </canvas>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+
+    <div fxLayout fxLayoutAlign="space-between start" fxLayoutGap="1em">
+        <app-trends fxFlex="50%"></app-trends>
+        <mat-card fxFlex="50%" class="doughnut">
+            <canvas baseChart [data]="demodoughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+        </mat-card>
+    </div>
+</div>

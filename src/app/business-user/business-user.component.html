@@ -1,0 +1,79 @@
+<div fxLayout="column" fxLayoutGap="1em" class="business">
+    <app-flightcard></app-flightcard>
+    <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="0.5em">
+        <div fxFlex="55%" fxLayout="column" fxLayoutGap="0.35em" class="Feed">
+            <div fxLayout="row" fxLayoutGap="1em" class="search_and_filter" fxLayoutAlign="space-between center">
+                <div class="search">
+                    <div class="searchContainer">
+                        <!-- <i class="fa fa-search searchIcon"></i> -->
+                        <i class="material-icons searchIcon">search</i>
+                        <input class="searchBox" type="search" name="search" placeholder="Flight no">
+                    </div>
+                </div>
+                <div fxLayout fxLayoutAlign="none center" fxLayoutGap="1.5em">
+                    <div class="sort">
+                        Sort by:
+                    </div>
+                    <mat-form-field>
+                        <mat-select [(value)]="selected">
+                            <mat-option *ngFor="let type of types" [value]="type">
+                                {{type}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+            </div>
+            <div *ngFor="let arr of arr1">
+                <mat-card class="card">
+                    <mat-card-header fxLayout fxLayoutAlign="space-between start">
+                        <ngx-avatar mat-card-avatar [value]="arr.number" bgColor="#0b1560"></ngx-avatar>
+                        <mat-card-title class="matTitle">
+                            Flight with below details has {{arr.status}}
+                        </mat-card-title>
+                        <mat-card-subtitle class="matTitle" fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="1em">
+                            <!-- <div fxLayout fxLayoutAlign="space-between start">
+                                <div fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="0.5em">
+                                    <span>HEL</span>
+                                    <span>30-NOV-2019 at 20:10</span>
+                                </div>
+                                <mat-icon>arrow_forward</mat-icon>
+                                <div fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="0.5em">
+                                    <span>DEL</span>
+                                    <span>01-DEC at 00:25</span>
+                                </div>
+                            </div> -->
+
+                            <div fxLayout fxLayoutAlign="space-between center" class="matGrey" id="desc">
+                                <div fxFlex="49%">
+                                    {{arr.firstDesc}}
+                                </div>
+                                <mat-icon>arrow_forward</mat-icon>
+                                <div fxFlex="50%" [class.red]="arr.secondDesc=='CANCELLED'">
+                                    {{arr.secondDesc}}
+                                </div>
+                            </div>
+                            <!-- <span class="matGrey">HEL-DEL on 30-NOV-2019 at 20:10 
+                                <mat-icon>trending_flat</mat-icon> HEL-DEL on 01-DEC at 00:25</span> -->
+                            <div fxLayout fxLayoutGap="1em" class="matGrey">
+
+                                <p matTooltip="Click here for Customer Feed" class="ok_contacts" fxLayout="column" fxLayoutAlign="center center" (click)="openDialog(arr)">
+                                    <span>OK contacts</span>
+                                    <span>{{arr.OK}}</span>
+                                </p>
+                                <mat-divider vertical style="border-right-width:2px;height:50px;"></mat-divider>
+                                <p fxLayout="column" fxLayoutAlign="center center">
+                                    <span>NOK contacts</span>
+                                    <span>{{arr.NOK}}</span>
+                                </p>
+                            </div>
+                        </mat-card-subtitle>
+                        <ngx-avatar [value]="arr.NOK" bgColor="#fc3d08"></ngx-avatar>
+                    </mat-card-header>
+                </mat-card>
+            </div>
+
+        </div>
+        <app-activity-feed fxFlex="45%"> </app-activity-feed>
+    </div>
+</div>
